@@ -1,4 +1,4 @@
-package org.Globant;
+package org.ESPN;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
