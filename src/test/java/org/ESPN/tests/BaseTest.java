@@ -2,6 +2,9 @@ package org.ESPN.tests;
 
 import static java.lang.String.format;
 
+import org.hamcrest.Matcher;
+import org.hamcrest.MatcherAssert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.ESPN.configuration.Driver;
@@ -23,5 +26,18 @@ public class BaseTest {
         driver.getDriver().get(url);
         driver.getDriver().manage().window().maximize();
         home = new HomePage(driver.getDriver());
+    }
+
+    @AfterTest()
+    public void teardown() { driver.getDriver().quit(); }
+    protected <T> void checkThat(
+            String description, T actualValue, Matcher<? super T> expectedValue) {
+        Reporter.info(
+                format("Checking that " + description.toLowerCase() + " [Expectation: %s]", expectedValue));
+        try {
+            MatcherAssert.assertThat(actualValue, expectedValue);
+        } catch (AssertionError e) {
+            Reporter.error(format("Assertion Error: [%s]", e.getMessage().replaceAll("\n", "")));
+        }
     }
 }
