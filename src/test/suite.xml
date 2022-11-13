@@ -8,16 +8,12 @@
     <parameter name="url" value="https://www.espnqa.com/?src=com&amp;_adblock=true&amp;espn=cloud"></parameter>
 
 
-
     <test name="ESPN Log In test">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="org.ESPN.tests.LogInTest"></class>
         </classes>
     </test>
-
-
-
 
 
 
