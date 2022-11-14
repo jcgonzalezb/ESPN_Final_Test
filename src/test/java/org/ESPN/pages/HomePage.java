@@ -18,15 +18,25 @@ public class HomePage extends BasePage{
     @FindBy(css= "div.global-user:last-child ul.account-management > li:last-child > a")
     private WebElement logInText;
 
-    @FindBy(id = "div#oneid-wrapper > iframe#oneid-iframe")
+    @FindBy(css = "div#oneid-wrapper > iframe#oneid-iframe")
     private WebElement logInModal;
 
     @FindBy(id="logo")
     private WebElement espnLogo;
 
-    public boolean isUserSectionDisplayed(){
-        return userSection.isDisplayed();
+    @FindBy(id = "BtnSubmit")
+    private WebElement logInButton;
+
+    @FindBy(id = "BtnCreateAccount")
+    private WebElement signUpButton;
+
+    public boolean isLogInModalDisplayed(){
+        return logInModal.isDisplayed();
     }
+    public boolean isEspnLogoDisplayed() { return espnLogo.isDisplayed(); }
+    public boolean isLogInButtonDisplayed() { return logInButton.isDisplayed(); }
+    public boolean isSignUpButtonDisplayed() { return signUpButton.isDisplayed(); }
+
 
     public void startLogIn() {
         waitForVisibility(userSection);
@@ -35,8 +45,7 @@ public class HomePage extends BasePage{
         clickElement(menu);
         waitForVisibility(logInText);
         clickElement(logInText);
-        waitForVisibility(logInModal);
-
+        //waitForVisibility(logInModal);
     }
 
 }
