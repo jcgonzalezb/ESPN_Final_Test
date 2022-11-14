@@ -5,6 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage{
+    private String username = "juankter@gmail.com";
+    private String password = "6yFKiCTfA!";
+
+
     public HomePage(WebDriver driver){
         super(driver);
     }
@@ -66,13 +70,20 @@ public class HomePage extends BasePage{
         clickElement(logInText);
     }
 
-    public void endLogIn() {
-
-
-
-
+    public void endLogIn () {
+        typeOnInput(usernameValue, username);
+        typeOnInput(passwordValue, password);
+        clickElement(logInButton);
     }
 
+    public void logOut () {
+        waitForVisibility(userSection);
+        clickElement(userSection);
+        waitForVisibility(menu);
+        clickElement(menu);
+        waitForVisibility(logInText);
+        clickElement(logInText);
+    }
 
 
 
