@@ -31,9 +31,12 @@ public class HomePage extends BasePage{
     private WebElement signUpButton;
 
     public boolean isLogInModalDisplayed(){
+        waitForVisibility(logInModal);
         return logInModal.isDisplayed();
     }
-    public boolean isEspnLogoDisplayed() { return espnLogo.isDisplayed(); }
+    public boolean isEspnLogoDisplayed() {
+        waitForVisibility(espnLogo);
+        return espnLogo.isDisplayed(); }
     public boolean isLogInButtonDisplayed() { return logInButton.isDisplayed(); }
     public boolean isSignUpButtonDisplayed() { return signUpButton.isDisplayed(); }
 
@@ -45,7 +48,7 @@ public class HomePage extends BasePage{
         clickElement(menu);
         waitForVisibility(logInText);
         clickElement(logInText);
-        //waitForVisibility(logInModal);
+        waitForVisibility(logInModal);
     }
 
 }
