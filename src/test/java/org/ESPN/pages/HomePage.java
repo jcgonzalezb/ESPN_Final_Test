@@ -21,10 +21,10 @@ public class HomePage extends BasePage{
     @FindBy(css = "div#oneid-wrapper > iframe#oneid-iframe")
     private WebElement logInModal;
 
-    @FindBy(id="logo")
+    @FindBy(css="logo logo-primary#logo")
     private WebElement espnLogo;
 
-    @FindBy(id = "BtnSubmit")
+    @FindBy(css = "ul.account-management li:nth-child(7)")
     private WebElement logInButton;
 
     @FindBy(id = "BtnCreateAccount")
