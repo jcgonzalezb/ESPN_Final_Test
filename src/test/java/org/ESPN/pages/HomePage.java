@@ -21,23 +21,28 @@ public class HomePage extends BasePage{
     @FindBy(css = "div#oneid-wrapper > iframe#oneid-iframe")
     private WebElement logInModal;
 
-    @FindBy(css="logo logo-primary#logo")
+    @FindBy(id ="logo")
     private WebElement espnLogo;
 
-    @FindBy(css = "ul.account-management li:nth-child(7)")
+    @FindBy (id = "BtnSubmit")
     private WebElement logInButton;
 
     @FindBy(id = "BtnCreateAccount")
     private WebElement signUpButton;
 
+    public void switchToModal() {
+        super.getDriver().switchTo().frame(this.logInModal);
+    }
     public boolean isLogInModalDisplayed(){
-        waitForVisibility(logInModal);
+        super.waitForVisibility(logInModal);
         return logInModal.isDisplayed();
     }
     public boolean isEspnLogoDisplayed() {
-        waitForVisibility(espnLogo);
+        super.waitForVisibility(espnLogo);
         return espnLogo.isDisplayed(); }
-    public boolean isLogInButtonDisplayed() { return logInButton.isDisplayed(); }
+    public boolean isLogInButtonDisplayed() {
+        //super.waitForVisibility(logInButton);
+        return logInButton.isDisplayed(); }
     public boolean isSignUpButtonDisplayed() { return signUpButton.isDisplayed(); }
 
 
@@ -48,7 +53,10 @@ public class HomePage extends BasePage{
         clickElement(menu);
         waitForVisibility(logInText);
         clickElement(logInText);
-        waitForVisibility(logInModal);
+        //waitForVisibility(logInModal);
     }
+
+
+
 
 }
