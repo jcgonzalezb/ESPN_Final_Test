@@ -12,10 +12,10 @@ public class HomePage extends BasePage{
     @FindBy(id="global-user-trigger")
     private WebElement userSection;
 
-    @FindBy(className = "account-management")
+    @FindBy(className = "global-user-container")
     private WebElement newFrame;
 
-    @FindBy(linkText = "Log In")
+    @FindBy(css= "div.global-user:last-child ul.account-management > li:last-child > a")
     private WebElement LogInText;
 
     public boolean isUserSectionDisplayed(){
@@ -29,6 +29,7 @@ public class HomePage extends BasePage{
         clickElement(newFrame);
         waitForVisibility(LogInText);
         clickElement(LogInText);
+
     }
 
 
