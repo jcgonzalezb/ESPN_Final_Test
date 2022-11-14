@@ -15,6 +15,10 @@ public class LogInTest extends BaseTest {
         checkThat("ESPN logo is present", home.isEspnLogoDisplayed(), is(true));
         checkThat("Log In button is present", home.isLogInButtonDisplayed(), is(true));
         checkThat("Sign Up button is present", home.isSignUpButtonDisplayed(), is(true));
+        //checkThat("Username is present", home.isUsernameSpaceDisplayed(), is(true));
+        //checkThat("Password is present", home.isPasswordSpaceDisplayed(), is(true));
+        home.endLogIn();
+        //home.switchToMain();
     }
 
 }

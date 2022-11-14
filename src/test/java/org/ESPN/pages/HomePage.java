@@ -30,9 +30,17 @@ public class HomePage extends BasePage{
     @FindBy(id = "BtnCreateAccount")
     private WebElement signUpButton;
 
+    @FindBy(id = "InputLoginValue")
+    private WebElement usernameValue;
+
+    @FindBy(id = "InputPassword")
+    private WebElement passwordValue;
+
     public void switchToModal() {
-        super.getDriver().switchTo().frame(this.logInModal);
+        super.getDriver().switchTo().frame(logInModal);
     }
+
+    public void switchToMain() {super.getDriver().switchTo().defaultContent(); }
     public boolean isLogInModalDisplayed(){
         super.waitForVisibility(logInModal);
         return logInModal.isDisplayed();
@@ -41,9 +49,12 @@ public class HomePage extends BasePage{
         super.waitForVisibility(espnLogo);
         return espnLogo.isDisplayed(); }
     public boolean isLogInButtonDisplayed() {
-        //super.waitForVisibility(logInButton);
+        super.waitForVisibility(logInButton);
         return logInButton.isDisplayed(); }
     public boolean isSignUpButtonDisplayed() { return signUpButton.isDisplayed(); }
+    public boolean isUsernameSpaceDisplayed() { return usernameValue.isDisplayed(); }
+    public boolean isPasswordSpaceDisplayed() { return passwordValue.isDisplayed(); }
+
 
 
     public void startLogIn() {
@@ -53,7 +64,13 @@ public class HomePage extends BasePage{
         clickElement(menu);
         waitForVisibility(logInText);
         clickElement(logInText);
-        //waitForVisibility(logInModal);
+    }
+
+    public void endLogIn() {
+
+
+
+
     }
 
 
