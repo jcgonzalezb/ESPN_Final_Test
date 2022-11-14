@@ -19,6 +19,7 @@ public class LogInTest extends BaseTest {
         //checkThat("Password is present", home.isPasswordSpaceDisplayed(), is(true));
         home.endLogIn();
         home.switchToMain();
+        //checkThat("User Icon is present", home.isUserIconDisplayed(), is(true));
         //home.logOut();
     }
 

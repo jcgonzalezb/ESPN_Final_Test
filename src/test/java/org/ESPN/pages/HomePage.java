@@ -59,7 +59,7 @@ public class HomePage extends BasePage{
     public boolean isUsernameSpaceDisplayed() { return usernameValue.isDisplayed(); }
     public boolean isPasswordSpaceDisplayed() { return passwordValue.isDisplayed(); }
 
-
+    public boolean isUserIconDisplayed() { return userSection.isDisplayed(); }
 
     public void startLogIn() {
         waitForVisibility(userSection);
@@ -78,13 +78,12 @@ public class HomePage extends BasePage{
 
     public void logOut () {
         waitForVisibility(userSection);
+        waitForClickable(userSection);
         clickElement(userSection);
         waitForVisibility(menu);
         clickElement(menu);
         waitForVisibility(logInText);
         clickElement(logInText);
     }
-
-
 
 }
