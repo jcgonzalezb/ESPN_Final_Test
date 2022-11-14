@@ -13,16 +13,16 @@ public class HomePage extends BasePage{
     private WebElement userSection;
 
     @FindBy(className = "global-user-container")
-    private WebElement Menu;
+    private WebElement menu;
 
     @FindBy(css= "div.global-user:last-child ul.account-management > li:last-child > a")
-    private WebElement LogInText;
+    private WebElement logInText;
 
     @FindBy(id = "div#oneid-wrapper > iframe#oneid-iframe")
-    private WebElement LogInModal;
+    private WebElement logInModal;
 
-    @FindBy(id="InputLoginValue")
-    private WebElement email;
+    @FindBy(id="logo")
+    private WebElement espnLogo;
 
     public boolean isUserSectionDisplayed(){
         return userSection.isDisplayed();
@@ -31,15 +31,12 @@ public class HomePage extends BasePage{
     public void startLogIn() {
         waitForVisibility(userSection);
         clickElement(userSection);
-        waitForVisibility(Menu);
-        clickElement(Menu);
-        waitForVisibility(LogInText);
-        clickElement(LogInText);
-        waitForVisibility(LogInModal);
-        clickElement(email);
-
+        waitForVisibility(menu);
+        clickElement(menu);
+        waitForVisibility(logInText);
+        clickElement(logInText);
+        waitForVisibility(logInModal);
 
     }
-
 
 }
