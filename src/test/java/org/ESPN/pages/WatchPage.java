@@ -11,8 +11,29 @@ public class WatchPage extends BasePage{
     }
 
 
-    //@FindBy(id="global-user-trigger")
-    //private WebElement userIcon;
+    @FindBy(css="#fittPageContainer > section > div:nth-child(1) > section")
+    private WebElement firstCarousel;
+
+
+    @FindBy(css="#fittPageContainer > section > div:nth-child(1) > section > div.Carousel__Wrapper.relative.Carousel__Wrapper--canScrollRight > div > div > ul > li:nth-child(2)")
+    private WebElement secondCardFirstCarousel;
+
+
+    public boolean isFirstCarouselDisplayed() { return firstCarousel.isDisplayed(); }
+    public boolean isSecondCardDisplayed() { return secondCardFirstCarousel.isDisplayed(); }
+
+    public void clickOnSecondCard(){
+        waitForVisibility(secondCardFirstCarousel);
+        waitForClickable(secondCardFirstCarousel);
+        clickElement(secondCardFirstCarousel);
+    }
+
+
+
+
+
+
+
 
 
 
