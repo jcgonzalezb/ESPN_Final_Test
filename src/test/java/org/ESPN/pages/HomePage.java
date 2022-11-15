@@ -14,7 +14,7 @@ public class HomePage extends BasePage{
     }
 
     @FindBy(id="global-user-trigger")
-    private WebElement userSection;
+    private WebElement userIcon;
 
     @FindBy(className = "global-user-container")
     private WebElement menu;
@@ -59,11 +59,11 @@ public class HomePage extends BasePage{
     public boolean isUsernameSpaceDisplayed() { return usernameValue.isDisplayed(); }
     public boolean isPasswordSpaceDisplayed() { return passwordValue.isDisplayed(); }
 
-    public boolean isUserIconDisplayed() { return userSection.isDisplayed(); }
+    public boolean isUserIconDisplayed() { return userIcon.isDisplayed(); }
 
     public void startLogIn() {
-        waitForVisibility(userSection);
-        clickElement(userSection);
+        waitForVisibility(userIcon);
+        clickElement(userIcon);
         waitForVisibility(menu);
         clickElement(menu);
         waitForVisibility(logInText);
@@ -74,16 +74,17 @@ public class HomePage extends BasePage{
         typeOnInput(usernameValue, username);
         typeOnInput(passwordValue, password);
         clickElement(logInButton);
+        switchToMain();
+        waitForVisibility(userIcon);
+        waitForClickable(userIcon);
     }
 
     public void logOut () {
-        waitForVisibility(userSection);
-        waitForClickable(userSection);
-        clickElement(userSection);
-        waitForVisibility(menu);
-        clickElement(menu);
-        waitForVisibility(logInText);
-        clickElement(logInText);
+        //clickElement(userIcon);
+        //waitForVisibility(menu);
+        //clickElement(menu);
+        //waitForVisibility(logInText);
+        //clickElement(logInText);
     }
 
 }
