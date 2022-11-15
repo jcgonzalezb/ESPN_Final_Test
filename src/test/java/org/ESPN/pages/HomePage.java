@@ -44,10 +44,6 @@ public class HomePage extends BasePage{
     @FindBy(css = "#global-nav > ul > li.pillar.watch > a")
     private WebElement watchIcon;
 
-    @FindBy(css = "#global-nav > ul > li.pillar.watch > div > ul > li:nth-child(1) > a" )
-    private WebElement homeOption;
-
-
     public void switchToModal() {
         super.getDriver().switchTo().frame(logInModal);
     }
@@ -92,8 +88,6 @@ public class HomePage extends BasePage{
     public WatchPage watchPage() {
         waitForVisibility(watchIcon);
         clickElement(watchIcon);
-        //waitForVisibility(homeOption);
-        clickElement(homeOption);
         return new WatchPage(getDriver());
     }
 
