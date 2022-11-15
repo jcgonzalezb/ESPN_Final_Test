@@ -19,9 +19,6 @@ public class LogInTest extends BaseTest {
         //checkThat("Sign Up button is present", home.isSignUpButtonDisplayed(), is(true));
         //checkThat("Username is present", home.isUsernameSpaceDisplayed(), is(true));
         //checkThat("Password is present", home.isPasswordSpaceDisplayed(), is(true));
-        //home.endLogIn();
-        //checkThat("User Icon is present", home.isUserIconDisplayed(), is(true));
-        //home.logOut();
     }
 
 }

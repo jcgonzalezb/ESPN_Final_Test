@@ -44,8 +44,6 @@ public class HomePage extends BasePage{
     @FindBy(css = "#global-nav > ul > li.pillar.watch > a")
     private WebElement watchIcon;
 
-
-
     @FindBy(css = "#global-nav > ul > li.pillar.watch > div > ul > li:nth-child(1) > a" )
     private WebElement homeOption;
 
