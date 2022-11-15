@@ -8,7 +8,7 @@ import static org.hamcrest.Matchers.is;
 public class LogInTest extends BaseTest {
 
     @Test
-    public void enterLogIn() {
+    public void enterLogIn() throws InterruptedException {
         home.startLogIn();
         checkThat("Modal is present", home.isLogInModalDisplayed(), is(true));
         home.switchToModal();

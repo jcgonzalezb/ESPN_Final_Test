@@ -2,6 +2,7 @@ package org.ESPN.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage{
@@ -79,8 +80,11 @@ public class HomePage extends BasePage{
         waitForClickable(userIcon);
     }
 
-    public void logOut () {
-        //clickElement(userIcon);
+    public void logOut () throws InterruptedException {
+        Actions action = new Actions(getDriver());
+        action.moveToElement(userIcon).perform();
+        Thread.sleep(15000);
+        clickElement(userIcon);
         //waitForVisibility(menu);
         //clickElement(menu);
         //waitForVisibility(logInText);
