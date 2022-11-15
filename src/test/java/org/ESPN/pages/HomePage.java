@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage{
     private String username = "juankter@gmail.com";
-    private String password = "6yFKiCTfA!";
+    private String password = "6yFKiCT-";
 
 
     public HomePage(WebDriver driver){
