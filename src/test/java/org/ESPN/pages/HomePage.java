@@ -41,6 +41,15 @@ public class HomePage extends BasePage{
     @FindBy(id = "InputPassword")
     private WebElement passwordValue;
 
+    @FindBy(css = "#global-nav > ul > li.pillar.watch > a")
+    private WebElement watchIcon;
+
+
+
+    @FindBy(css = "#global-nav > ul > li.pillar.watch > div > ul > li:nth-child(1) > a" )
+    private WebElement homeOption;
+
+
     public void switchToModal() {
         super.getDriver().switchTo().frame(logInModal);
     }
@@ -62,6 +71,8 @@ public class HomePage extends BasePage{
 
     public boolean isUserIconDisplayed() { return userIcon.isDisplayed(); }
 
+    public boolean isWatchIconDisplayed() { return watchIcon.isDisplayed(); }
+
     public void startLogIn() {
         waitForVisibility(userIcon);
         clickElement(userIcon);
@@ -79,6 +90,15 @@ public class HomePage extends BasePage{
         waitForVisibility(userIcon);
         waitForClickable(userIcon);
     }
+
+    public WatchPage watchPage() {
+        waitForVisibility(watchIcon);
+        clickElement(watchIcon);
+        //waitForVisibility(homeOption);
+        clickElement(homeOption);
+        return new WatchPage(getDriver());
+    }
+
 
     public void logOut () throws InterruptedException {
         Actions action = new Actions(getDriver());

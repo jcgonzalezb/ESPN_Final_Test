@@ -9,17 +9,19 @@ public class LogInTest extends BaseTest {
 
     @Test
     public void enterLogIn() throws InterruptedException {
-        home.startLogIn();
-        checkThat("Modal is present", home.isLogInModalDisplayed(), is(true));
-        home.switchToModal();
-        checkThat("ESPN logo is present", home.isEspnLogoDisplayed(), is(true));
-        checkThat("Log In button is present", home.isLogInButtonDisplayed(), is(true));
-        checkThat("Sign Up button is present", home.isSignUpButtonDisplayed(), is(true));
+        //home.startLogIn();
+        //checkThat("User Modal is present", home.isLogInModalDisplayed(), is(true));
+        checkThat("Watch Icon is present", home.isWatchIconDisplayed(), is(true));
+        home.watchPage();
+        //home.switchToModal();
+        //checkThat("ESPN logo is present", home.isEspnLogoDisplayed(), is(true));
+        //checkThat("Log In button is present", home.isLogInButtonDisplayed(), is(true));
+        //checkThat("Sign Up button is present", home.isSignUpButtonDisplayed(), is(true));
         //checkThat("Username is present", home.isUsernameSpaceDisplayed(), is(true));
         //checkThat("Password is present", home.isPasswordSpaceDisplayed(), is(true));
-        home.endLogIn();
-        checkThat("User Icon is present", home.isUserIconDisplayed(), is(true));
-        home.logOut();
+        //home.endLogIn();
+        //checkThat("User Icon is present", home.isUserIconDisplayed(), is(true));
+        //home.logOut();
     }
 
 }
