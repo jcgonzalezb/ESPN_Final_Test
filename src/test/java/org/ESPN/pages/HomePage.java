@@ -123,9 +123,9 @@ public class HomePage extends BasePage{
 
 
     public void insertCredentials () {
-        String username = "anahousat089@hotmail.com";
+        String username = "juankter@gmail.com";
         typeOnInput(usernameValue, username);
-        String password = "8asuW-Mu21";
+        String password = "6yFKiCTfA!";
         typeOnInput(passwordValue, password);
         clickElement(logInButton);
         switchToMain();
@@ -137,7 +137,7 @@ public class HomePage extends BasePage{
         return new WatchPage(getDriver());
     }
 
-    public void mouseHover() {
+    public void mouseHoverUserIcon() {
         waitForVisibility(userIcon);
         Actions action = new Actions(getDriver());
         action.moveToElement(userIcon).perform();

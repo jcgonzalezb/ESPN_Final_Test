@@ -9,10 +9,10 @@ public class LogOutTest extends BaseTest{
     @Test
     public void logOut() throws InterruptedException {
         home.logInComplete();
-        home.mouseHover();
+        home.mouseHoverUserIcon();
         home.accessingUserPanel();
         home.logOutOption();
-        home.mouseHover();
+        home.mouseHoverUserIcon();
         home.accessingUserPanel();
         checkThat("The element 'Nav text'\n" +
                 "has text: 'Welcome!' without user name specified", home.displayUsername(), is("Welcome!"));
