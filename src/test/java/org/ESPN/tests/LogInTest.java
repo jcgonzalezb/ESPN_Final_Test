@@ -31,7 +31,7 @@ public class LogInTest extends BaseTest {
         home.switchToMain();
         home.mouseHoverUserIcon();
         home.accessingUserPanel();
-        //checkThat("The username is correct", home.userNameConfirmation(), is(USERNAME));
+        checkThat("The username is correct", home.userNameConfirmation(), is(USERNAME));
         home.logOutOption();
         home.mouseHoverUserIcon();
         home.accessingUserPanel();

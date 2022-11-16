@@ -145,7 +145,8 @@ public class HomePage extends BasePage{
         clickElement(userIcon);
     }
 
-    public String userNameConfirmation () {
+    public String userNameConfirmation ()    {
+        waitForVisibility(userNameConfirmation);
         return userNameConfirmation.getText();
     }
 
