@@ -33,7 +33,7 @@ public class WebOperations {
     public void waitForVisibility(WebElement element) { wait.until(ExpectedConditions.visibilityOf(element));}
     public void waitForInvisibility(WebElement element) { wait.until(ExpectedConditions.invisibilityOf(element));}
 
-    public void waitForBannerExistence(WebElement element) { wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(element));}
+    public void waitForFrameExistence(WebElement element) { wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(element));}
 
     public void waitForVisibility(List<WebElement> elements) {
         wait.until(ExpectedConditions.visibilityOfAllElements(elements));

@@ -9,7 +9,11 @@ public class DeactivateAccountTest extends BaseTest {
         home.mouseHoverUserIcon();
         home.accessingUserPanel();
         home.profileOption();
-
+        home.switchToUpdateAccount();
+        home.insideUpdateForm();
+        home.switchToConfirmation();
+        home.DeleteConfirmationForm();
+        home.switchToMain();
     }
 
 

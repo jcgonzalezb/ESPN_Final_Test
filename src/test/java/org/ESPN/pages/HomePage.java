@@ -11,6 +11,11 @@ public class HomePage extends BasePage{
         super(driver);
     }
 
+    @FindBy(css= "body > div.promo-banner-container > iframe")
+    private WebElement bannerIframe;
+    @FindBy(css="#fittPageContainer > section > div.PromoBanner__CloseBtn")
+    private WebElement bannerCloseBtn;
+
     @FindBy(id="global-user-trigger")
     private WebElement userIcon;
 
@@ -50,21 +55,28 @@ public class HomePage extends BasePage{
     @FindBy(linkText="Log Out")
     private WebElement logOutText;
 
-    @FindBy(css = "#global-viewport > div.global-user > div > ul.account-management > li:nth-child(5) > a")
+    @FindBy(linkText="ESPN Profile")
     private WebElement espnProfile;
+
+    @FindBy(css = "#root > div:nth-child(3) > div > div > div:nth-child(1) > form")
+    private WebElement UpdateAccountForm;
 
     @FindBy(css="#AccountDeleteLink")
     private WebElement accountDeleteLink;
 
-    @FindBy(css= "body > div.promo-banner-container > iframe")
-    private WebElement bannerIframe;
-    @FindBy(css="#fittPageContainer > section > div.PromoBanner__CloseBtn")
-    private WebElement bannerCloseBtn;
+    @FindBy(css= "#root > div:nth-child(3) > div")
+    private WebElement deleteConfirmationForm;
+
+    @FindBy(css= "#BtnSubmit")
+    private WebElement deleteConfirmationButton;
+
+
 
     public void closeBanner(){
-        waitForBannerExistence(bannerIframe);
+        waitForFrameExistence(bannerIframe);
         clickElement(bannerCloseBtn);
     }
+
 
     public boolean isLogInModalDisplayed(){
         super.waitForVisibility(logInModal);
@@ -110,6 +122,9 @@ public class HomePage extends BasePage{
 
     public void switchToMain() {super.getDriver().switchTo().defaultContent(); }
 
+    public void switchToUpdateAccount() { super.getDriver().switchTo().frame(UpdateAccountForm); }
+    public void switchToConfirmation() {super.getDriver().switchTo().frame(deleteConfirmationForm); }
+
 
     public void insertCredentials () {
         String username = "juankter@gmail.com";
@@ -138,7 +153,6 @@ public class HomePage extends BasePage{
         waitForVisibility(userNameConfirmation);
         return userNameConfirmation.getText();
     }
-
     public String displayUsername () {
         return displayUserName.getText();
     }
@@ -148,13 +162,26 @@ public class HomePage extends BasePage{
         waitForInvisibility(logInModal);
     }
 
-
     public void logInComplete() {
         LogInOption();
         switchToModal();
         insideLogInModal();
         switchToMain();
     }
+
+    public void insideUpdateForm() {
+        waitForVisibility(UpdateAccountForm);
+        waitForVisibility(accountDeleteLink);
+        clickElement(accountDeleteLink);
+        waitForInvisibility(UpdateAccountForm);
+    }
+    public void DeleteConfirmationForm() {
+        waitForVisibility(deleteConfirmationForm);
+        waitForVisibility(deleteConfirmationButton);
+        clickElement(deleteConfirmationButton);
+        waitForInvisibility(deleteConfirmationForm);
+    }
+
 
 
 }
