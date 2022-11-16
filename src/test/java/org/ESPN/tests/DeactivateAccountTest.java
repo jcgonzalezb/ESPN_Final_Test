@@ -9,6 +9,7 @@ public class DeactivateAccountTest extends BaseTest {
         home.mouseHover();
         home.accessingUserPanel();
         home.profileOption();
+
     }
 
 

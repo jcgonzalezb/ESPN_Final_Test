@@ -30,13 +30,14 @@ public class LogInTest extends BaseTest {
         watchPage.clickOnxButton();
         watchPage.returnToHome();
         home.mouseHover();
-        home.accessingUserPanel();;
+        home.accessingUserPanel();
         //checkThat("The username is correct", home.userNameConfirmation(), is(USERNAME));
         //home.logOutOption();
         //home.mouseHover();
         //home.accessingUserOptions();
         checkThat("The element 'Nav text'\n" +
                 "has text: 'Welcome!' without user name specified", home.displayUsername(), is("Welcome!"));
+
 
     }
 }

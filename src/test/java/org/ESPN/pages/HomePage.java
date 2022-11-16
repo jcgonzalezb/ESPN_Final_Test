@@ -52,7 +52,11 @@ public class HomePage extends BasePage{
     private WebElement logOutText;
 
     @FindBy(css = "#global-viewport > div.global-user > div > ul.account-management > li:nth-child(5) > a")
-    private WebElement EspnProfile;
+    private WebElement espnProfile;
+
+    @FindBy(css="#AccountDeleteLink")
+    private WebElement accountDeleteLink;
+
 
     public void switchToModal() {
         super.getDriver().switchTo().frame(logInModal);
@@ -103,14 +107,14 @@ public class HomePage extends BasePage{
 
     public void profileOption() {
         accessingUserPanel();
-        waitForVisibility(EspnProfile);
-        clickElement(EspnProfile);
+        waitForVisibility(espnProfile);
+        clickElement(espnProfile);
     }
 
     public void insertCredentials () {
-        String username = "juankter@gmail.com";
+        String username = "juantesat1@hotmail.com";
         typeOnInput(usernameValue, username);
-        String password = "6yFKiCTfA!";
+        String password = "i8qmK-A34";
         typeOnInput(passwordValue, password);
         clickElement(logInButton);
         switchToMain();
@@ -137,6 +141,12 @@ public class HomePage extends BasePage{
     public String displayUsername () {
         return displayUserName.getText();
     }
+
+
+
+
+
+
 
     public void logInComplete() {
         LogInOption();
