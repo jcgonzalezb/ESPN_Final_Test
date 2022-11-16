@@ -20,7 +20,6 @@ public class LogInTest extends BaseTest {
         checkThat("Sign Up button is present", home.isSignUpButtonDisplayed(), is(true));
         home.insideLogInModal();
         home.switchToMain();
-        checkThat("Watch Icon is present", home.isWatchIconDisplayed(), is(true));
         WatchPage watchPage = home.watchPage();
         checkThat("The first carousel is present", watchPage.isFirstCarouselDisplayed(), is(true));
         checkThat("The second card on the first carousel is present", watchPage.isSecondCardDisplayed(), is(true));

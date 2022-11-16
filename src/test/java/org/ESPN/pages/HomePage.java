@@ -56,7 +56,6 @@ public class HomePage extends BasePage{
     @FindBy(css="#AccountDeleteLink")
     private WebElement accountDeleteLink;
 
-
     @FindBy(css= "body > div.promo-banner-container > iframe")
     private WebElement bannerIframe;
     @FindBy(css="#fittPageContainer > section > div.PromoBanner__CloseBtn")
@@ -81,16 +80,6 @@ public class HomePage extends BasePage{
         super.waitForVisibility(signUpButton);
         return signUpButton.isDisplayed();
     }
-
-    //public boolean isUsernameSpaceDisplayed() { return usernameValue.isDisplayed(); }
-    //public boolean isPasswordSpaceDisplayed() { return passwordValue.isDisplayed(); }
-
-    public boolean isUserIconDisplayed() { return userIcon.isDisplayed(); }
-
-    public boolean isWatchIconDisplayed() { return watchIcon.isDisplayed(); }
-
-    public boolean isUserCorrectDisplayed() { return userNameConfirmation.isDisplayed(); }
-
     public void accessingUserPanel() {
         waitForVisibility(userIcon);
         clickElement(userIcon);
