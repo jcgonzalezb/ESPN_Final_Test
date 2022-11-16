@@ -25,6 +25,7 @@ public class LogInTest extends BaseTest {
         watchPage.clickOnSecondCard();
         //watchPage.switchToIframeWatch();
         checkThat("The 'X' button to close is present", watchPage.isxButtonDisplayed(), is(true));
+        watchPage.returnToHome();
 
     }
 }
