@@ -11,18 +11,15 @@ public class LogInTest extends BaseTest {
     private final String USERNAME = "Juan!";
 
     @Test
-    public void enterLogIn() {
-        //home.LogInOption();
-        //checkThat("User Modal is present", home.isLogInModalDisplayed(), is(true));
-        //home.switchToModal();
-        //checkThat("ESPN logo is present", home.isEspnLogoDisplayed(), is(true));
-        //checkThat("Log In button is present", home.isLogInButtonDisplayed(), is(true));
-        //checkThat("Sign Up button is present", home.isSignUpButtonDisplayed(), is(true));
-        //checkThat("Username is present", home.isUsernameSpaceDisplayed(), is(true));
-        //checkThat("Password is present", home.isPasswordSpaceDisplayed(), is(true));
-        //home.insertCredentials();
-        //waitForInvisibility(logInModal);
-        //switchToMain();
+    public void LogInTest() {
+        home.LogInOption();
+        checkThat("User Modal is present", home.isLogInModalDisplayed(), is(true));
+        home.switchToModal();
+        checkThat("ESPN logo is present", home.isEspnLogoDisplayed(), is(true));
+        checkThat("Log In button is present", home.isLogInButtonDisplayed(), is(true));
+        checkThat("Sign Up button is present", home.isSignUpButtonDisplayed(), is(true));
+        home.insideLogInModal();
+        home.switchToMain();
         checkThat("Watch Icon is present", home.isWatchIconDisplayed(), is(true));
         WatchPage watchPage = home.watchPage();
         checkThat("The first carousel is present", watchPage.isFirstCarouselDisplayed(), is(true));
@@ -31,12 +28,13 @@ public class LogInTest extends BaseTest {
         checkThat("The 'X' button to close is present", watchPage.isxButtonDisplayed(), is(true));
         watchPage.clickOnxButton();
         watchPage.returnToHome();
+        home.switchToMain();
         home.mouseHover();
         home.accessingUserPanel();
         //checkThat("The username is correct", home.userNameConfirmation(), is(USERNAME));
-        //home.logOutOption();
-        //home.mouseHover();
-        //home.accessingUserOptions();
+        home.logOutOption();
+        home.mouseHover();
+        home.accessingUserPanel();
         checkThat("The element 'Nav text'\n" +
                 "has text: 'Welcome!' without user name specified", home.displayUsername(), is("Welcome!"));
 

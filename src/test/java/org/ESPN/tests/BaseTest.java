@@ -14,6 +14,10 @@ public class BaseTest {
     private Driver driver;
     protected HomePage home;
 
+
+
+
+
     @Parameters({"browser", "url"})
     @BeforeTest()
     public void testSetup(String browser, String url) {
@@ -24,6 +28,7 @@ public class BaseTest {
         driver.getDriver().get(url);
         driver.getDriver().manage().window().maximize();
         home = new HomePage(driver.getDriver());
+        home.closeBanner();
     }
 
     @AfterTest()

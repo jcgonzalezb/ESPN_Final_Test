@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage{
 
-
     public HomePage(WebDriver driver){
         super(driver);
     }
@@ -68,8 +67,6 @@ public class HomePage extends BasePage{
         clickElement(bannerCloseBtn);
     }
 
-
-
     public boolean isLogInModalDisplayed(){
         super.waitForVisibility(logInModal);
         return logInModal.isDisplayed();
@@ -126,9 +123,9 @@ public class HomePage extends BasePage{
 
 
     public void insertCredentials () {
-        String username = "juantesat1@hotmail.com";
+        String username = "anahousat089@hotmail.com";
         typeOnInput(usernameValue, username);
-        String password = "i8qmK-A34";
+        String password = "8asuW-Mu21";
         typeOnInput(passwordValue, password);
         clickElement(logInButton);
         switchToMain();
@@ -141,6 +138,7 @@ public class HomePage extends BasePage{
     }
 
     public void mouseHover() {
+        waitForVisibility(userIcon);
         Actions action = new Actions(getDriver());
         action.moveToElement(userIcon).perform();
         waitForClickable(userIcon);
@@ -155,12 +153,16 @@ public class HomePage extends BasePage{
         return displayUserName.getText();
     }
 
-    public void logInComplete() {
-        closeBanner();
-        LogInOption();
-        switchToModal();
+    public void insideLogInModal() {
         insertCredentials();
         waitForInvisibility(logInModal);
+    }
+
+
+    public void logInComplete() {
+        LogInOption();
+        switchToModal();
+        insideLogInModal();
         switchToMain();
     }
 
