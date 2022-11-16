@@ -66,9 +66,6 @@ public class HomePage extends BasePage{
     @FindBy(id="AccountDeleteLink")
     private WebElement accountDeleteLink;
 
-    //@FindBy(css= "div#oneid-wrapper > iframe#oneid-iframe")
-    //private WebElement deleteConfirmationForm;
-
     @FindBy(id= "BtnSubmit")
     private WebElement deleteAccountConfirmationButton;
 
@@ -126,12 +123,11 @@ public class HomePage extends BasePage{
     public void switchToUpdateAccount() { super.getDriver().switchTo().frame(UpdateAccountForm); }
 
     public void insertCredentials () {
-        String username = "anahousat089@hotmail.com";
+        String username = "juantesat1@hotmail.com";
         typeOnInput(usernameValue, username);
-        String password = "8asuW-Mu21";
+        String password = "i8qmK-A34";
         typeOnInput(passwordValue, password);
         clickElement(logInButton);
-        switchToMain();
     }
 
     public WatchPage watchPage() {
@@ -158,6 +154,7 @@ public class HomePage extends BasePage{
 
     public void insideLogInModal() {
         insertCredentials();
+        switchToMain();
         waitForInvisibility(logInModal);
     }
 
@@ -181,7 +178,4 @@ public class HomePage extends BasePage{
         clickElement(deleteAccountConfirmationButton);
         waitForInvisibility(deleteAccountConfirmationButton);
     }
-
-
-
 }

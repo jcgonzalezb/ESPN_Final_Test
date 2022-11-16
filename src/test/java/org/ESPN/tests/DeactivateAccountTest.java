@@ -13,7 +13,11 @@ public class DeactivateAccountTest extends BaseTest {
         home.insideUpdateForm();
         //home.switchToConfirmation();
         home.insideDeleteConfirmationForm();
-        //home.switchToMain();
+        home.switchToMain();
+        home.LogInOption();
+        home.switchToModal();
+        //Thread.sleep(15000);
+        //home.insertCredentials()
     }
 
 
