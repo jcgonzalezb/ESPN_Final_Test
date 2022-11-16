@@ -32,10 +32,10 @@ public class LogInTest extends BaseTest {
         home.mouseHover();
         home.accessingUserOptions();
         // checkThat("The username is correct", home.getUsername(), is(USERNAME));
-
-
-
-
-
+        home.logOutOption();
+        home.mouseHover();
+        home.accessingUserOptions();
+        checkThat("The element 'Nav text'\n" +
+                "has text: 'Welcome!' without user name specified", home.isUserCorrectDisplayed(), is(false));
     }
 }

@@ -80,8 +80,7 @@ public class HomePage extends BasePage{
 
     public boolean isWatchIconDisplayed() { return watchIcon.isDisplayed(); }
 
-    public boolean isUserCorrect() { return userNameConfirmation.isDisplayed(); }
-
+    public boolean isUserCorrectDisplayed() { return userNameConfirmation.isDisplayed(); }
 
     public void accessingUserOptions() {
         waitForVisibility(userIcon);
@@ -90,11 +89,19 @@ public class HomePage extends BasePage{
         clickElement(menu);
     }
 
-    public void startLogIn() {
+    public void LogInOption() {
         accessingUserOptions();
         waitForVisibility(logInText);
         clickElement(logInText);
     }
+    public void logOutOption() {
+        accessingUserOptions();
+        waitForVisibility(logOutText);
+        clickElement(logOutText);
+    }
+
+
+
 
     public void endLogIn () {
         typeOnInput(usernameValue, username);
@@ -116,11 +123,9 @@ public class HomePage extends BasePage{
         action.moveToElement(userIcon).perform();
     }
 
-    public String getUsername (){
+    public String getUsername () {
         return userNameConfirmation.getText();
-            }
-
-
+    }
 
 
     public void logOut () throws InterruptedException {
