@@ -60,10 +60,6 @@ public class HomePage extends BasePage{
 
     @FindBy(css= "body > div.promo-banner-container > iframe")
     private WebElement bannerIframe;
-
-    @FindBy(css="#fittPageContainer > section > div.PromoBanner__Wrapper")
-    private WebElement Promodasdasdasdasdasdasdasd;
-
     @FindBy(css="#fittPageContainer > section > div.PromoBanner__CloseBtn")
     private WebElement bannerCloseBtn;
 

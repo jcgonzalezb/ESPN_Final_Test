@@ -24,7 +24,6 @@ public class BaseTest {
         driver.getDriver().get(url);
         driver.getDriver().manage().window().maximize();
         home = new HomePage(driver.getDriver());
-
     }
 
     @AfterTest()
