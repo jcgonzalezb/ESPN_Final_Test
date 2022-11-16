@@ -16,7 +16,7 @@ public class WebOperations {
 
     public WebOperations(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(15L));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(5L));
         initElements(driver, this);
     }
 
@@ -33,6 +33,7 @@ public class WebOperations {
     public void waitForVisibility(WebElement element) { wait.until(ExpectedConditions.visibilityOf(element));}
     public void waitForInvisibility(WebElement element) { wait.until(ExpectedConditions.invisibilityOf(element));}
 
+    public void waitForBannerExistence(WebElement element) { wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(element));}
 
     public void waitForVisibility(List<WebElement> elements) {
         wait.until(ExpectedConditions.visibilityOfAllElements(elements));

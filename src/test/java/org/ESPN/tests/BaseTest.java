@@ -4,10 +4,7 @@ import static java.lang.String.format;
 
 import org.hamcrest.Matcher;
 import org.hamcrest.MatcherAssert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 import org.ESPN.configuration.Driver;
 import org.ESPN.pages.HomePage;
 import org.ESPN.reporting.Reporter;
@@ -27,6 +24,7 @@ public class BaseTest {
         driver.getDriver().get(url);
         driver.getDriver().manage().window().maximize();
         home = new HomePage(driver.getDriver());
+
     }
 
     @AfterTest()

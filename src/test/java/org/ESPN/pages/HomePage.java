@@ -48,7 +48,7 @@ public class HomePage extends BasePage{
     @FindBy(css = ".display-user")
     private WebElement displayUserName;
 
-    @FindBy(css="#global-viewport > div.global-user > div > ul.account-management > li:nth-child(9) > a")
+    @FindBy(linkText="Log Out")
     private WebElement logOutText;
 
     @FindBy(css = "#global-viewport > div.global-user > div > ul.account-management > li:nth-child(5) > a")
@@ -56,6 +56,23 @@ public class HomePage extends BasePage{
 
     @FindBy(css="#AccountDeleteLink")
     private WebElement accountDeleteLink;
+
+
+    @FindBy(css= "body > div.promo-banner-container > iframe")
+    private WebElement bannerIframe;
+
+    @FindBy(css="#fittPageContainer > section > div.PromoBanner__Wrapper")
+    private WebElement Promodasdasdasdasdasdasdasd;
+
+    @FindBy(css="#fittPageContainer > section > div.PromoBanner__CloseBtn")
+    private WebElement bannerCloseBtn;
+
+    public void closeBanner(){
+        waitForBannerExistence(bannerIframe);
+        clickElement(bannerCloseBtn);
+    }
+
+
 
     public boolean isLogInModalDisplayed(){
         super.waitForVisibility(logInModal);
@@ -143,6 +160,7 @@ public class HomePage extends BasePage{
     }
 
     public void logInComplete() {
+        closeBanner();
         LogInOption();
         switchToModal();
         insertCredentials();

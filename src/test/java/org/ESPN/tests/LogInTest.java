@@ -21,6 +21,8 @@ public class LogInTest extends BaseTest {
         //checkThat("Username is present", home.isUsernameSpaceDisplayed(), is(true));
         //checkThat("Password is present", home.isPasswordSpaceDisplayed(), is(true));
         //home.insertCredentials();
+        //waitForInvisibility(logInModal);
+        //switchToMain();
         checkThat("Watch Icon is present", home.isWatchIconDisplayed(), is(true));
         WatchPage watchPage = home.watchPage();
         checkThat("The first carousel is present", watchPage.isFirstCarouselDisplayed(), is(true));
