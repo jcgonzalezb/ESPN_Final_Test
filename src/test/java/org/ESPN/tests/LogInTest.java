@@ -12,7 +12,7 @@ public class LogInTest extends BaseTest {
 
     @Test
     public void enterLogIn() {
-        home.LogInOption();
+        //home.LogInOption();
         //checkThat("User Modal is present", home.isLogInModalDisplayed(), is(true));
         //home.switchToModal();
         //checkThat("ESPN logo is present", home.isEspnLogoDisplayed(), is(true));

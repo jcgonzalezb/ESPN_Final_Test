@@ -9,7 +9,7 @@
     <test name="ESPN Log In test">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="org.ESPN.tests.DeactivateAccountTest"></class>
+            <class name="org.ESPN.tests.LogInTest"></class>
         </classes>
     </test>
 </suite>
