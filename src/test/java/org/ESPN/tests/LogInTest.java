@@ -32,6 +32,7 @@ public class LogInTest extends BaseTest {
         home.accessingUserPanel();
         checkThat("The username is correct", home.userNameConfirmation(), is(USERNAME));
         home.logOutOption();
+        home.switchToMain();
         home.mouseHoverUserIcon();
         home.accessingUserPanel();
         checkThat("The element 'Nav text'\n" +

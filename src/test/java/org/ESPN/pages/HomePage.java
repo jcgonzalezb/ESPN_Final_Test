@@ -92,6 +92,7 @@ public class HomePage extends BasePage{
     }
     public void accessingUserPanel() {
         waitForVisibility(userIcon);
+        waitForClickable(userIcon);
         clickElement(userIcon);
         waitForVisibility(menu);
         clickElement(menu);
