@@ -12,6 +12,7 @@ public class LogOutTest extends BaseTest{
         home.mouseHoverUserIcon();
         home.accessingUserPanel();
         home.logOutOption();
+        home.switchToMain();
         home.mouseHoverUserIcon();
         home.accessingUserPanel();
         checkThat("The element 'Nav text'\n" +
