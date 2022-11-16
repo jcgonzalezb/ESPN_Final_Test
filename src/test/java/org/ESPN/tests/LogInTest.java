@@ -23,6 +23,8 @@ public class LogInTest extends BaseTest {
         checkThat("The first carousel is present", watchPage.isFirstCarouselDisplayed(), is(true));
         checkThat("The second card on the first carousel is present", watchPage.isSecondCardDisplayed(), is(true));
         watchPage.clickOnSecondCard();
-        Thread.sleep(15000);
+        //watchPage.switchToIframeWatch();
+        checkThat("The 'X' button to close is present", watchPage.isxButtonDisplayed(), is(true));
+
     }
 }
