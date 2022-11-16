@@ -8,10 +8,10 @@ import static org.hamcrest.Matchers.is;
 
 public class LogInTest extends BaseTest {
 
-    private final String USERNAME = "Juan";
+    private final String USERNAME = "Juan!";
 
     @Test
-    public void enterLogIn() throws InterruptedException {
+    public void enterLogIn() {
         //home.startLogIn();
         //checkThat("User Modal is present", home.isLogInModalDisplayed(), is(true));
         //home.switchToModal();
@@ -31,11 +31,12 @@ public class LogInTest extends BaseTest {
         watchPage.returnToHome();
         home.mouseHover();
         home.accessingUserOptions();
-        // checkThat("The username is correct", home.getUsername(), is(USERNAME));
-        home.logOutOption();
-        home.mouseHover();
-        home.accessingUserOptions();
+        //checkThat("The username is correct", home.userNameConfirmation(), is(USERNAME));
+        //home.logOutOption();
+        //home.mouseHover();
+        //home.accessingUserOptions();
         checkThat("The element 'Nav text'\n" +
-                "has text: 'Welcome!' without user name specified", home.isUserCorrectDisplayed(), is(false));
+                "has text: 'Welcome!' without user name specified", home.displayUsername(), is("Welcome!"));
+
     }
 }

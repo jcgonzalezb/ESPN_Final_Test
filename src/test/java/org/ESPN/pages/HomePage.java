@@ -44,10 +44,11 @@ public class HomePage extends BasePage{
     @FindBy(css = "#global-nav > ul > li.pillar.watch > a")
     private WebElement watchIcon;
 
-
-    @FindBy(css = "#global-viewport > div.global-user > div > ul.account-management > li.display-user > span")
+    @FindBy(css = ".display-user > span")
     private WebElement userNameConfirmation;
 
+    @FindBy(css = ".display-user")
+    private WebElement displayUserName;
 
     @FindBy(css="#global-viewport > div.global-user > div > ul.account-management > li:nth-child(9) > a")
     private WebElement logOutText;
@@ -82,7 +83,7 @@ public class HomePage extends BasePage{
 
     public boolean isUserCorrectDisplayed() { return userNameConfirmation.isDisplayed(); }
 
-    public void accessingUserOptions() {
+    public void accessingUserPanel() {
         waitForVisibility(userIcon);
         clickElement(userIcon);
         waitForVisibility(menu);
@@ -90,12 +91,12 @@ public class HomePage extends BasePage{
     }
 
     public void LogInOption() {
-        accessingUserOptions();
+        accessingUserPanel();
         waitForVisibility(logInText);
         clickElement(logInText);
     }
     public void logOutOption() {
-        accessingUserOptions();
+        accessingUserPanel();
         waitForVisibility(logOutText);
         clickElement(logOutText);
     }
@@ -123,9 +124,16 @@ public class HomePage extends BasePage{
         action.moveToElement(userIcon).perform();
     }
 
-    public String getUsername () {
+    public String userNameConfirmation () {
         return userNameConfirmation.getText();
     }
+
+    public String displayUsername () {
+        return displayUserName.getText();
+    }
+
+
+
 
 
     public void logOut () throws InterruptedException {
