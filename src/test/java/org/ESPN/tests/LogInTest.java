@@ -8,6 +8,8 @@ import static org.hamcrest.Matchers.is;
 
 public class LogInTest extends BaseTest {
 
+    private final String USERNAME = "Juan";
+
     @Test
     public void enterLogIn() throws InterruptedException {
         //home.startLogIn();
@@ -27,6 +29,13 @@ public class LogInTest extends BaseTest {
         checkThat("The 'X' button to close is present", watchPage.isxButtonDisplayed(), is(true));
         watchPage.clickOnxButton();
         watchPage.returnToHome();
+        home.mouseHover();
+        home.accessingUserOptions();
+        // checkThat("The username is correct", home.getUsername(), is(USERNAME));
+
+
+
+
 
     }
 }

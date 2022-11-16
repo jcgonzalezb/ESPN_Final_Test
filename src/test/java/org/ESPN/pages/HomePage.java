@@ -44,6 +44,15 @@ public class HomePage extends BasePage{
     @FindBy(css = "#global-nav > ul > li.pillar.watch > a")
     private WebElement watchIcon;
 
+
+    @FindBy(css = "#global-viewport > div.global-user > div > ul.account-management > li.display-user > span")
+    private WebElement userNameConfirmation;
+
+
+    @FindBy(css="#global-viewport > div.global-user > div > ul.account-management > li:nth-child(9) > a")
+    private WebElement logOutText;
+
+
     public void switchToModal() {
         super.getDriver().switchTo().frame(logInModal);
     }
@@ -59,19 +68,30 @@ public class HomePage extends BasePage{
     public boolean isLogInButtonDisplayed() {
         super.waitForVisibility(logInButton);
         return logInButton.isDisplayed(); }
-    public boolean isSignUpButtonDisplayed() { return signUpButton.isDisplayed(); }
-    public boolean isUsernameSpaceDisplayed() { return usernameValue.isDisplayed(); }
-    public boolean isPasswordSpaceDisplayed() { return passwordValue.isDisplayed(); }
+    public boolean isSignUpButtonDisplayed() {
+        super.waitForVisibility(signUpButton);
+        return signUpButton.isDisplayed();
+    }
+
+    //public boolean isUsernameSpaceDisplayed() { return usernameValue.isDisplayed(); }
+    //public boolean isPasswordSpaceDisplayed() { return passwordValue.isDisplayed(); }
 
     public boolean isUserIconDisplayed() { return userIcon.isDisplayed(); }
 
     public boolean isWatchIconDisplayed() { return watchIcon.isDisplayed(); }
 
-    public void startLogIn() {
+    public boolean isUserCorrect() { return userNameConfirmation.isDisplayed(); }
+
+
+    public void accessingUserOptions() {
         waitForVisibility(userIcon);
         clickElement(userIcon);
         waitForVisibility(menu);
         clickElement(menu);
+    }
+
+    public void startLogIn() {
+        accessingUserOptions();
         waitForVisibility(logInText);
         clickElement(logInText);
     }
@@ -90,6 +110,17 @@ public class HomePage extends BasePage{
         clickElement(watchIcon);
         return new WatchPage(getDriver());
     }
+
+    public void mouseHover() {
+        Actions action = new Actions(getDriver());
+        action.moveToElement(userIcon).perform();
+    }
+
+    public String getUsername (){
+        return userNameConfirmation.getText();
+            }
+
+
 
 
     public void logOut () throws InterruptedException {
