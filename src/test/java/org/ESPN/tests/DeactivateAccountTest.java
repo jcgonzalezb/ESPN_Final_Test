@@ -1,7 +1,6 @@
 package org.ESPN.tests;
 
 import org.testng.annotations.Test;
-import static org.hamcrest.Matchers.is;
 public class DeactivateAccountTest extends BaseTest {
     @Test
     public void DeactivateAccount()  {

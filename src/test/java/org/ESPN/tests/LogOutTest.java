@@ -1,13 +1,13 @@
 package org.ESPN.tests;
 
-import org.ESPN.pages.WatchPage;
+
 import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.is;
 
 public class LogOutTest extends BaseTest{
 
     @Test
-    public void logOut() throws InterruptedException {
+    public void logOut() {
         home.logInComplete();
         home.mouseHoverUserIcon();
         home.accessingUserPanel();
