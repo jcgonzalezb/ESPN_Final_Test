@@ -11,9 +11,9 @@ public class DeactivateAccountTest extends BaseTest {
         home.profileOption();
         home.switchToUpdateAccount();
         home.insideUpdateForm();
-        home.switchToConfirmation();
-        home.DeleteConfirmationForm();
-        home.switchToMain();
+        //home.switchToConfirmation();
+        home.insideDeleteConfirmationForm();
+        //home.switchToMain();
     }
 
 

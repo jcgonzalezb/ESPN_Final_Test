@@ -1,5 +1,7 @@
 package org.ESPN.pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -58,18 +60,17 @@ public class HomePage extends BasePage{
     @FindBy(linkText="ESPN Profile")
     private WebElement espnProfile;
 
-    @FindBy(css = "#root > div:nth-child(3) > div > div > div:nth-child(1) > form")
+    @FindBy(css= "div#oneid-wrapper > iframe#oneid-iframe")
     private WebElement UpdateAccountForm;
 
-    @FindBy(css="#AccountDeleteLink")
+    @FindBy(id="AccountDeleteLink")
     private WebElement accountDeleteLink;
 
-    @FindBy(css= "#root > div:nth-child(3) > div")
-    private WebElement deleteConfirmationForm;
+    //@FindBy(css= "div#oneid-wrapper > iframe#oneid-iframe")
+    //private WebElement deleteConfirmationForm;
 
-    @FindBy(css= "#BtnSubmit")
-    private WebElement deleteConfirmationButton;
-
+    @FindBy(id= "BtnSubmit")
+    private WebElement deleteAccountConfirmationButton;
 
 
     public void closeBanner(){
@@ -123,13 +124,11 @@ public class HomePage extends BasePage{
     public void switchToMain() {super.getDriver().switchTo().defaultContent(); }
 
     public void switchToUpdateAccount() { super.getDriver().switchTo().frame(UpdateAccountForm); }
-    public void switchToConfirmation() {super.getDriver().switchTo().frame(deleteConfirmationForm); }
-
 
     public void insertCredentials () {
-        String username = "juankter@gmail.com";
+        String username = "anahousat089@hotmail.com";
         typeOnInput(usernameValue, username);
-        String password = "6yFKiCTfA!";
+        String password = "8asuW-Mu21";
         typeOnInput(passwordValue, password);
         clickElement(logInButton);
         switchToMain();
@@ -170,16 +169,17 @@ public class HomePage extends BasePage{
     }
 
     public void insideUpdateForm() {
-        waitForVisibility(UpdateAccountForm);
         waitForVisibility(accountDeleteLink);
+        waitForClickable(accountDeleteLink);
         clickElement(accountDeleteLink);
         waitForInvisibility(UpdateAccountForm);
     }
-    public void DeleteConfirmationForm() {
-        waitForVisibility(deleteConfirmationForm);
-        waitForVisibility(deleteConfirmationButton);
-        clickElement(deleteConfirmationButton);
-        waitForInvisibility(deleteConfirmationForm);
+
+    public void insideDeleteConfirmationForm() {
+        waitForVisibility(deleteAccountConfirmationButton);
+        waitForClickable(deleteAccountConfirmationButton);
+        clickElement(deleteAccountConfirmationButton);
+        waitForInvisibility(deleteAccountConfirmationButton);
     }
 
 
