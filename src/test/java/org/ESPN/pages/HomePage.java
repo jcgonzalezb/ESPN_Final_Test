@@ -57,12 +57,6 @@ public class HomePage extends BasePage{
     @FindBy(css="#AccountDeleteLink")
     private WebElement accountDeleteLink;
 
-
-    public void switchToModal() {
-        super.getDriver().switchTo().frame(logInModal);
-    }
-
-    public void switchToMain() {super.getDriver().switchTo().defaultContent(); }
     public boolean isLogInModalDisplayed(){
         super.waitForVisibility(logInModal);
         return logInModal.isDisplayed();
@@ -111,6 +105,13 @@ public class HomePage extends BasePage{
         clickElement(espnProfile);
     }
 
+    public void switchToModal() {
+        super.getDriver().switchTo().frame(logInModal);
+    }
+
+    public void switchToMain() {super.getDriver().switchTo().defaultContent(); }
+
+
     public void insertCredentials () {
         String username = "juantesat1@hotmail.com";
         typeOnInput(usernameValue, username);
@@ -129,7 +130,6 @@ public class HomePage extends BasePage{
     public void mouseHover() {
         Actions action = new Actions(getDriver());
         action.moveToElement(userIcon).perform();
-        waitForVisibility(userIcon);
         waitForClickable(userIcon);
         clickElement(userIcon);
     }
@@ -142,16 +142,12 @@ public class HomePage extends BasePage{
         return displayUserName.getText();
     }
 
-
-
-
-
-
-
     public void logInComplete() {
         LogInOption();
         switchToModal();
         insertCredentials();
+        waitForInvisibility(logInModal);
+        switchToMain();
     }
 
 

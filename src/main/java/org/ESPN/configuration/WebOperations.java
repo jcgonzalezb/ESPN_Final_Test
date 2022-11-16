@@ -31,6 +31,9 @@ public class WebOperations {
 
     public void typeOnInput(WebElement element, String text) {element.sendKeys(text);}
     public void waitForVisibility(WebElement element) { wait.until(ExpectedConditions.visibilityOf(element));}
+    public void waitForInvisibility(WebElement element) { wait.until(ExpectedConditions.invisibilityOf(element));}
+
+
     public void waitForVisibility(List<WebElement> elements) {
         wait.until(ExpectedConditions.visibilityOfAllElements(elements));
     }
