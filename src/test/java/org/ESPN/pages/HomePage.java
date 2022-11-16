@@ -6,8 +6,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage{
-    private String username = "juankter@gmail.com";
-    private String password = "6yFKiCT-";
 
 
     public HomePage(WebDriver driver){
@@ -53,6 +51,8 @@ public class HomePage extends BasePage{
     @FindBy(css="#global-viewport > div.global-user > div > ul.account-management > li:nth-child(9) > a")
     private WebElement logOutText;
 
+    @FindBy(css = "#global-viewport > div.global-user > div > ul.account-management > li:nth-child(5) > a")
+    private WebElement EspnProfile;
 
     public void switchToModal() {
         super.getDriver().switchTo().frame(logInModal);
@@ -101,16 +101,19 @@ public class HomePage extends BasePage{
         clickElement(logOutText);
     }
 
+    public void profileOption() {
+        accessingUserPanel();
+        waitForVisibility(EspnProfile);
+        clickElement(EspnProfile);
+    }
 
-
-
-    public void endLogIn () {
+    public void insertCredentials () {
+        String username = "juankter@gmail.com";
         typeOnInput(usernameValue, username);
+        String password = "6yFKiCTfA!";
         typeOnInput(passwordValue, password);
         clickElement(logInButton);
         switchToMain();
-        waitForVisibility(userIcon);
-        waitForClickable(userIcon);
     }
 
     public WatchPage watchPage() {
@@ -122,6 +125,9 @@ public class HomePage extends BasePage{
     public void mouseHover() {
         Actions action = new Actions(getDriver());
         action.moveToElement(userIcon).perform();
+        waitForVisibility(userIcon);
+        waitForClickable(userIcon);
+        clickElement(userIcon);
     }
 
     public String userNameConfirmation () {
@@ -132,19 +138,11 @@ public class HomePage extends BasePage{
         return displayUserName.getText();
     }
 
-
-
-
-
-    public void logOut () throws InterruptedException {
-        Actions action = new Actions(getDriver());
-        action.moveToElement(userIcon).perform();
-        Thread.sleep(15000);
-        clickElement(userIcon);
-        //waitForVisibility(menu);
-        //clickElement(menu);
-        //waitForVisibility(logInText);
-        //clickElement(logInText);
+    public void logInComplete() {
+        LogInOption();
+        switchToModal();
+        insertCredentials();
     }
+
 
 }

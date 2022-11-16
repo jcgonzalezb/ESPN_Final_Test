@@ -12,7 +12,7 @@ public class LogInTest extends BaseTest {
 
     @Test
     public void enterLogIn() {
-        //home.startLogIn();
+        home.LogInOption();
         //checkThat("User Modal is present", home.isLogInModalDisplayed(), is(true));
         //home.switchToModal();
         //checkThat("ESPN logo is present", home.isEspnLogoDisplayed(), is(true));
@@ -20,17 +20,17 @@ public class LogInTest extends BaseTest {
         //checkThat("Sign Up button is present", home.isSignUpButtonDisplayed(), is(true));
         //checkThat("Username is present", home.isUsernameSpaceDisplayed(), is(true));
         //checkThat("Password is present", home.isPasswordSpaceDisplayed(), is(true));
+        //home.insertCredentials();
         checkThat("Watch Icon is present", home.isWatchIconDisplayed(), is(true));
         WatchPage watchPage = home.watchPage();
         checkThat("The first carousel is present", watchPage.isFirstCarouselDisplayed(), is(true));
         checkThat("The second card on the first carousel is present", watchPage.isSecondCardDisplayed(), is(true));
         watchPage.clickOnSecondCard();
-        //watchPage.switchToIframeWatch();
         checkThat("The 'X' button to close is present", watchPage.isxButtonDisplayed(), is(true));
         watchPage.clickOnxButton();
         watchPage.returnToHome();
         home.mouseHover();
-        home.accessingUserOptions();
+        home.accessingUserPanel();;
         //checkThat("The username is correct", home.userNameConfirmation(), is(USERNAME));
         //home.logOutOption();
         //home.mouseHover();
