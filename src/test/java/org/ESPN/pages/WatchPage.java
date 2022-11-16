@@ -35,7 +35,7 @@ public class WatchPage extends BasePage{
     }
 
     public void clickOnxButton(){
-        //super.waitForClickable(xButton);
+        super.waitForClickable(xButton);
         super.clickElement(xButton);
     }
 
