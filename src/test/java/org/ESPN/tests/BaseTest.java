@@ -14,12 +14,8 @@ public class BaseTest {
     private Driver driver;
     protected HomePage home;
 
-
-
-
-
     @Parameters({"browser", "url"})
-    @BeforeTest()
+    @BeforeClass()
     public void testSetup(String browser, String url) {
         driver = new Driver(browser);
         Reporter.info("Deleting all the cookies");
