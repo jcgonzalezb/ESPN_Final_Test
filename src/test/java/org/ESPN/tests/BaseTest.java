@@ -26,7 +26,7 @@ public class BaseTest {
         home.closeBanner();
     }
 
-    @AfterClass()
+    @AfterTest()
     public void teardown() { driver.getDriver().quit(); }
     protected <T> void checkThat(
             String description, T actualValue, Matcher<? super T> expectedValue) {
