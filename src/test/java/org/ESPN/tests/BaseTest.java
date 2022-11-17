@@ -9,7 +9,6 @@ import org.ESPN.configuration.Driver;
 import org.ESPN.pages.HomePage;
 import org.ESPN.reporting.Reporter;
 
-
 public class BaseTest {
     private Driver driver;
     protected HomePage home;
