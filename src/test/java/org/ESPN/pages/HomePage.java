@@ -69,8 +69,8 @@ public class HomePage extends BasePage{
 
 
     public void closeBanner(){
-        waitForFrameExistence(bannerIframe);
-        clickElement(bannerCloseBtn);
+        super.waitForFrameExistence(bannerIframe);
+        super.clickElement(bannerCloseBtn);
     }
 
 
@@ -89,28 +89,28 @@ public class HomePage extends BasePage{
         return signUpButton.isDisplayed();
     }
     public void accessingUserPanel() {
-        waitForVisibility(userIcon);
-        waitForClickable(userIcon);
-        clickElement(userIcon);
-        waitForVisibility(menu);
-        clickElement(menu);
+        super.waitForVisibility(userIcon);
+        super.waitForClickable(userIcon);
+        super.clickElement(userIcon);
+        super.waitForVisibility(menu);
+        super.clickElement(menu);
     }
 
     public void LogInOption() {
         accessingUserPanel();
-        waitForVisibility(logInText);
-        clickElement(logInText);
+        super.waitForVisibility(logInText);
+        super.clickElement(logInText);
     }
     public void logOutOption() {
         accessingUserPanel();
-        waitForVisibility(logOutText);
-        clickElement(logOutText);
+        super.waitForVisibility(logOutText);
+        super.clickElement(logOutText);
     }
 
     public void profileOption() {
         accessingUserPanel();
-        waitForVisibility(espnProfile);
-        clickElement(espnProfile);
+        super.waitForVisibility(espnProfile);
+        super.clickElement(espnProfile);
     }
 
     public void switchToModal() {
@@ -123,28 +123,28 @@ public class HomePage extends BasePage{
 
     public void insertCredentials () {
         String username = "juantesat1@hotmail.com";
-        typeOnInput(usernameValue, username);
+        super.typeOnInput(usernameValue, username);
         String password = "auvR$k7tz9vJuH$";
-        typeOnInput(passwordValue, password);
-        clickElement(logInButton);
+        super.typeOnInput(passwordValue, password);
+        super.clickElement(logInButton);
     }
 
     public WatchPage watchPage() {
-        waitForVisibility(watchIcon);
-        clickElement(watchIcon);
+        super.waitForVisibility(watchIcon);
+        super.clickElement(watchIcon);
         return new WatchPage(getDriver());
     }
 
     public void mouseHoverUserIcon() {
-        waitForVisibility(userIcon);
+        super.waitForVisibility(userIcon);
         Actions action = new Actions(getDriver());
         action.moveToElement(userIcon).perform();
-        waitForClickable(userIcon);
-        clickElement(userIcon);
+        super.waitForClickable(userIcon);
+        super.clickElement(userIcon);
     }
 
     public String userNameConfirmation ()    {
-        waitForVisibility(userNameConfirmation);
+        super.waitForVisibility(userNameConfirmation);
         return userNameConfirmation.getText();
     }
     public String displayUsername () {
@@ -154,7 +154,7 @@ public class HomePage extends BasePage{
     public void insideLogInModal() {
         insertCredentials();
         switchToMain();
-        waitForInvisibility(logInModal);
+        super.waitForInvisibility(logInModal);
     }
 
     public void logInComplete() {
@@ -165,16 +165,16 @@ public class HomePage extends BasePage{
     }
 
     public void insideUpdateForm() {
-        waitForVisibility(accountDeleteLink);
-        waitForClickable(accountDeleteLink);
-        clickElement(accountDeleteLink);
-        waitForInvisibility(UpdateAccountForm);
+        super.waitForVisibility(accountDeleteLink);
+        super.waitForClickable(accountDeleteLink);
+        super.clickElement(accountDeleteLink);
+        super.waitForInvisibility(UpdateAccountForm);
     }
 
     public void insideDeleteConfirmationForm() {
-        waitForVisibility(deleteAccountConfirmationButton);
-        waitForClickable(deleteAccountConfirmationButton);
-        clickElement(deleteAccountConfirmationButton);
-        waitForInvisibility(deleteAccountConfirmationButton);
+        super.waitForVisibility(deleteAccountConfirmationButton);
+        super.waitForClickable(deleteAccountConfirmationButton);
+        super.clickElement(deleteAccountConfirmationButton);
+        super.waitForInvisibility(deleteAccountConfirmationButton);
     }
 }

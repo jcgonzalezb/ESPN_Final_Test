@@ -44,9 +44,9 @@ public class WatchPage extends BasePage{
     }
 
     public void clickOnSecondCard(){
-        waitForVisibility(secondCardFirstCarousel);
-        waitForClickable(secondCardFirstCarousel);
-        clickElement(secondCardFirstCarousel);
+        super.waitForVisibility(secondCardFirstCarousel);
+        super.waitForClickable(secondCardFirstCarousel);
+        super.clickElement(secondCardFirstCarousel);
     }
 
     public void returnToHome(){
