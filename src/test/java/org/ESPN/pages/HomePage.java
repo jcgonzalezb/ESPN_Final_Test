@@ -124,7 +124,7 @@ public class HomePage extends BasePage{
     public void insertCredentials () {
         String username = "juantesat1@hotmail.com";
         typeOnInput(usernameValue, username);
-        String password = "i8qmK-A34";
+        String password = "auvR$k7tz9vJuH$";
         typeOnInput(passwordValue, password);
         clickElement(logInButton);
     }
