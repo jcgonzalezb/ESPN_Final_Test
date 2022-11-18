@@ -1,6 +1,9 @@
 package org.ESPN.tests;
 
 import org.testng.annotations.Test;
+
+import static org.hamcrest.Matchers.is;
+
 public class DeactivateAccountTest extends BaseTest {
     @Test
     public void DeactivateAccount()  {
@@ -14,7 +17,8 @@ public class DeactivateAccountTest extends BaseTest {
         home.switchToMain();
         home.LogInOption();
         home.switchToModal();
-        //home.insertCredentials()
+        home.insertCredentials();
+        checkThat("User deactivated correctly", home.userNameConfirmation(), is("Account Deactivated"));
     }
 
 
