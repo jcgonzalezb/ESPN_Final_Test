@@ -67,7 +67,7 @@ public class HomePage extends BasePage{
     @FindBy(id= "BtnSubmit")
     private WebElement deleteAccountConfirmationButton;
 
-    @FindBy (css = ".account-deleted-gating + #Title")
+    @FindBy(id= "BtnSubmit")
     private  WebElement accountDeactivatedMessage;
 
     public void closeBanner(){
@@ -177,11 +177,12 @@ public class HomePage extends BasePage{
         super.waitForVisibility(deleteAccountConfirmationButton);
         super.waitForClickable(deleteAccountConfirmationButton);
         super.clickElement(deleteAccountConfirmationButton);
-        super.waitForVisibility(deleteAccountConfirmationButton);
-        super.waitForClickable(deleteAccountConfirmationButton);
-        super.clickElement(deleteAccountConfirmationButton);
         super.waitForInvisibility(deleteAccountConfirmationButton);
-        super.waitForInvisibility(deleteAccountConfirmationButton);
+        //super.waitForVisibility(deleteAccountConfirmationButton);
+        //super.waitForClickable(deleteAccountConfirmationButton);
+        //super.clickElement(deleteAccountConfirmationButton);
+        //super.waitForInvisibility(deleteAccountConfirmationButton);
+        //super.waitForInvisibility(deleteAccountConfirmationButton);
     }
 
     public String getAccountDeactivatedMessage() {
